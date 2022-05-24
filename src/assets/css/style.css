@@ -1,0 +1,33 @@
+body {
+  background-color: #000f26 !important;
+}
+
+.main-header {
+  background: url(./../img/header-bg-4.png) center no-repeat;
+  background-size: cover;
+}
+.main-header .navbar-nav .nav-item .nav-link {
+  border-bottom: transparent 2px solid;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.main-header .navbar-nav .nav-item .nav-link:hover {
+  border-bottom-color: #379700;
+}
+
+.filter-modal-btn {
+  background-color: bisque;
+  aspect-ratio: 1;
+  padding: 10px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
