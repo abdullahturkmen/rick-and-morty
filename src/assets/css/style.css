@@ -2,19 +2,28 @@ body {
   background-color: #000f26 !important;
 }
 
-.main-header {
+header.main-header {
   background: url(./../img/header-bg-4.png) center no-repeat;
   background-size: cover;
 }
-.main-header .navbar-nav .nav-item .nav-link {
+header .navbar-nav .nav-item .nav-link {
   border-bottom: transparent 2px solid;
   display: block;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
-.main-header .navbar-nav .nav-item .nav-link:hover {
+header .navbar-nav .nav-item .nav-link:hover {
   border-bottom-color: #379700;
+}
+
+.home-main {
+  background: url(./../img/main-bg.png) center;
+}
+
+.footer {
+  background: url(./../img/header-bg-3.png) center no-repeat;
+  background-size: cover;
 }
 
 .filter-modal-btn {
@@ -30,4 +39,21 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.user-detail {
+  margin-top: 200px;
+}
+.user-detail .card {
+  padding-top: 150px;
+}
+.user-detail img {
+  max-width: 250px;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 8px solid #eee;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=style.css.map */

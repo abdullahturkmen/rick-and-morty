@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Outlet, Link } from "react-router-dom";
 
 const Cards = ({results}) => {
 
@@ -9,8 +10,7 @@ const Cards = ({results}) => {
             let {id, name, image} = x;
             return (
 
-                <div className="col" key={id} data-bs-toggle="modal"
-                data-bs-target="#detailsModal">
+                <div className="col" key={id}>
                 <div className="card shadow-sm">
                 <img src={image} className="bd-placeholder-img card-img-top" width="100%"  loading="lazy"/>
                   
@@ -19,12 +19,11 @@ const Cards = ({results}) => {
                     <div className="d-flex justify-content-between
                       align-items-center">
                       <div className="btn-group">
-                        <button type="button" className="btn btn-sm
-                          btn-outline-secondary">View</button>
-                        <button type="button" className="btn btn-sm
-                          btn-outline-secondary">Edit</button>
+                        
+                          <Link to={`${id}`}  className="btn btn-sm
+                          btn-info">View</Link>
                       </div>
-                      <small className="text-muted">9 mins</small>
+                      
                     </div>
                   </div>
                 </div>

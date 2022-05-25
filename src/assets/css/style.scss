@@ -1,9 +1,11 @@
 body {
     background-color: #000f26 !important;
 }
-.main-header {
-    background: url(./../img/header-bg-4.png) center no-repeat;
-    background-size: cover;
+header {
+    &.main-header {
+        background: url(./../img/header-bg-4.png) center no-repeat;
+        background-size: cover;
+    }
 
     .navbar-nav {
         .nav-item {
@@ -19,6 +21,15 @@ body {
     }
 }
 
+.home-main{
+    background: url(./../img/main-bg.png) center;
+}
+
+.footer {
+    background: url(./../img/header-bg-3.png) center no-repeat;
+    background-size: cover;
+}
+
 .filter-modal-btn {
     background-color: bisque;
     aspect-ratio: 1;
@@ -32,4 +43,23 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.user-detail {
+    margin-top: 200px;
+
+    .card {
+        padding-top: 150px;
+    }
+
+    img {
+        max-width: 250px;
+        width: 100%;
+        aspect-ratio: 1;
+        border: 8px solid #eee;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
 }
