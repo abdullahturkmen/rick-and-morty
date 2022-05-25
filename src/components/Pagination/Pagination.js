@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 const Pagination = ({setPageNumber}) => {
-
 
     let prev = () => {
         setPageNumber((x) => x - 1);
@@ -20,12 +19,12 @@ const Pagination = ({setPageNumber}) => {
                             className="page-link"
                             href="#"
                             
-                            aria-disabled="true">Geri</a>
+                            aria-disabled="true">Previous</a>
                     </li>
                     <li className="page-item">
                         <a onClick={next}
                             className="page-link"
-                            href="#">İleri</a>
+                            href="#">Next</a>
                     </li>
                 </ul>
             </nav>

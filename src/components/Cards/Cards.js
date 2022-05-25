@@ -15,7 +15,7 @@ const Cards = ({results}) => {
                 <img src={image} className="bd-placeholder-img card-img-top" width="100%"  loading="lazy"/>
                   
                   <div className="card-body">
-                    <p className="card-text">{name}</p>
+                    <h5 class="card-title">{name}</h5>
                     <div className="d-flex justify-content-between
                       align-items-center">
                       <div className="btn-group">

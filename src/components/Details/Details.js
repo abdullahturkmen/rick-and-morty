@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Detils = () => {
+const Detils = ({characterDetails}) => {
+
+  //console.log(characterDetails);
+
   return (
     <div class="modal fade" id="detailsModal" tabindex="-1"
       aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -12,7 +15,7 @@ const Detils = () => {
               aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
+            {characterDetails}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary"

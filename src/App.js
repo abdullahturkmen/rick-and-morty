@@ -16,12 +16,11 @@ function App() {
   let [search, setSearch] = useState("");
   let [status, setStatus] = useState("");
   let [species, setSpecies] = useState("");
-  let [type, setType] = useState("");
   let [gender, setGender] = useState("");
   let [fetchedData, updateFetchedData] = useState([]);
   let {info, results} = fetchedData;
-  console.log(pageNumber);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&type=${type}&gender=${gender}`;
+  //console.log(fetchedData.info);
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
   
   useEffect(() => {
     (async function() {
@@ -69,16 +68,12 @@ function App() {
       <section className="py-5 text-start container">
         <div className="row py-lg-5">
           <div className="col-lg-10 col-md-8 mx-auto py-5">
-            <h1 className="text-light">Album example</h1>
-            <p className="lead text-light">Something short and leading about the
-              collection below—its contents, the creator, etc. Make it short and
-              sweet, but not too short so folks don’t simply skip over it
-              entirely.</p>
+            <h1 className="text-light">Rick and Morty</h1>
+            <p className="lead text-light">a never-ending fart joke wrapped around a studied look into nihilism</p>
             <p>
               <a href="#" className="btn btn-success rounded-pill btn-lg my-2">Main
                 call to action</a>
-              <a href="#" className="btn btn-outline-success rounded-pill btn-lg
-                my-2">Secondary action</a>
+              
             </p>
           </div>
         </div>
@@ -100,8 +95,8 @@ function App() {
 
     </main>
 
-    <Details />
-    <Filters  setStatus={setStatus} setSpecies={setSpecies} setType={setType} setGender={setGender}/>
+    <Details  characterDetails="Detaylar gelecek"/>
+    <Filters  setStatus={setStatus} setSpecies={setSpecies} setGender={setGender}/>
 
     </div>
   );
