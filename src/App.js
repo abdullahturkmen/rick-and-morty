@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import './assets/css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
@@ -7,14 +7,21 @@ import mainLogo from './assets/img/logo.png';
 import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
 import Details from './components/Details/Details';
+import Pagination from './components/Pagination/Pagination';
+import Search from './components/Search/Search';
 
 function App() {
 
   let [pageNumber, setPageNumber] = useState(1);
+  let [search, setSearch] = useState("");
+  let [status, setStatus] = useState("");
+  let [species, setSpecies] = useState("");
+  let [type, setType] = useState("");
+  let [gender, setGender] = useState("");
   let [fetchedData, updateFetchedData] = useState([]);
   let {info, results} = fetchedData;
-  //console.log(results);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  console.log(pageNumber);
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&type=${type}&gender=${gender}`;
   
   useEffect(() => {
     (async function() {
@@ -25,7 +32,7 @@ function App() {
   
 
   return (
-    <div classNameName="App">
+    <div className="App">
 
 
 <header className="main-header">
@@ -54,12 +61,7 @@ function App() {
                   tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
-            <form className="d-flex">
-              <input className="form-control me-2" type="search"
-                placeholder="Search Character Name" aria-label="Search" />
-              <button className="btn btn-success"
-                type="submit">Search</button>
-            </form>
+            <Search setSearch={setSearch}/>
           </div>
         </div>
       </nav>
@@ -92,12 +94,14 @@ function App() {
               <Cards results={results}/>
          
         </div>
+
+        <Pagination setPageNumber={setPageNumber}/>
       </div>
 
     </main>
 
     <Details />
-    <Filters />
+    <Filters  setStatus={setStatus} setSpecies={setSpecies} setType={setType} setGender={setGender}/>
 
     </div>
   );

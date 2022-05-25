@@ -12,7 +12,7 @@ const Cards = ({results}) => {
                 <div className="col" key={id} data-bs-toggle="modal"
                 data-bs-target="#detailsModal">
                 <div className="card shadow-sm">
-                <img src={image} className="bd-placeholder-img card-img-top" width="100%" />
+                <img src={image} className="bd-placeholder-img card-img-top" width="100%"  loading="lazy"/>
                   
                   <div className="card-body">
                     <p className="card-text">{name}</p>
