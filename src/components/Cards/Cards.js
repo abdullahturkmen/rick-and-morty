@@ -31,7 +31,7 @@ const Cards = ({results}) => {
             );
         });
     } else {
-        display = "Karakter Bitti";
+        //display = "Karakter Bitti";
     }
 
     return (
