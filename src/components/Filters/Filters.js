@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 
 const Filters = ({setStatus, setSpecies, setGender, updatePageNumber}) => {
@@ -23,8 +23,8 @@ const Filters = ({setStatus, setSpecies, setGender, updatePageNumber}) => {
         setStatus("");
         setSpecies("");
         setGender("");
-        
-      }
+
+    }
     return (
         <div>
             <div className="filter-modal-btn" data-bs-toggle="modal" data-bs-target="#filterModal">

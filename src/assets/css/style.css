@@ -20,6 +20,9 @@ header .navbar-nav .nav-item .nav-link:hover {
 .home-main {
   background: url(./../img/main-bg.png) center;
 }
+.home-main .card {
+  border-color: #00a9f7;
+}
 
 .footer {
   background: url(./../img/header-bg-3.png) center no-repeat;

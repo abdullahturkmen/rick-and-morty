@@ -4,7 +4,20 @@ import {useParams} from 'react-router-dom';
 import mainLogo from '../../assets/img/logo.png';
 import Footer from '../Footer/Footer';
 
+export function useTitle(title) {
+    useEffect(() => {
+      let prevTitle = document.title
+      document.title = title
+      return () => {
+        document.title = prevTitle
+      }
+    })
+  }
+
 const Detils = () => {
+
+    useTitle("Rick And Morty");
+
     let {id} = useParams();
 
     let [fetchedData, updateFetchedData] = useState([]);
@@ -25,8 +38,11 @@ const Detils = () => {
         (async function () {
             let data = await fetch(api).then((res) => res.json());
             updateFetchedData(data);
+            
         })();
     }, [api]);
+
+    
 
     return (
         <div className="Details">
@@ -34,10 +50,10 @@ const Detils = () => {
             <header className="">
                 <nav className="navbar navbar-expand-md navbar-dark">
                     <div className="container">
-                    <Link to="/" className="navbar-brand"><img src={mainLogo}
+                        <Link to="/" className="navbar-brand"><img src={mainLogo}
                                 height="50px"
                                 alt=""/></Link>
-                        
+
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -130,16 +146,24 @@ const Detils = () => {
 
                                 <ul className="d-flex align-items-center justify-content-center list-unstyled icons">
                                     <li className="icon ">
-                                        <span className="fa fa-twitter  text-light"></span>
+                                        <a href=''>
+                                            <span className="fa fa-twitter  text-light"></span>
+                                        </a>
                                     </li>
                                     <li className="icon mx-2">
-                                        <span className="fa fa-facebook text-light"></span>
+                                        <a href=''>
+                                            <span className="fa fa-facebook text-light"></span>
+                                        </a>
                                     </li>
                                     <li className="icon me-2">
-                                        <span className="fa fa-google-plus text-light"></span>
+                                        <a href=''>
+                                            <span className="fa fa-google-plus text-light"></span>
+                                        </a>
                                     </li>
                                     <li className="icon ">
-                                        <span className="fa fa-instagram text-light"></span>
+                                        <a href=''>
+                                            <span className="fa fa-instagram text-light"></span>
+                                        </a>
                                     </li>
                                 </ul>
                                 <p className="dis pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur.</p>

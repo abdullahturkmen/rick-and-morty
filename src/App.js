@@ -34,7 +34,20 @@ function App() {
     );
 }
 
+
+export function useTitle(title) {
+    useEffect(() => {
+        let prevTitle = document.title
+        document.title = title
+        return() => {
+            document.title = prevTitle
+        }
+    })
+}
+
 const Home = () => {
+
+    useTitle("Rick And Morty");
 
     let [pageNumber, setPageNumber] = useState(1);
     let [search, setSearch] = useState("");
@@ -47,24 +60,27 @@ const Home = () => {
     let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&species=${species}&gender=${gender}`;
 
     useEffect(() => {
+
         (async function () {
             let data = await fetch(api).then((res) => res.json());
             updateFetchedData(data);
+
         })();
     }, [api]);
 
 
     return (
+
         <div className="App">
 
 
             <header className="main-header">
                 <nav className="navbar navbar-expand-md navbar-dark">
                     <div className="container">
-                    <Link to="/" className="navbar-brand"><img src={mainLogo}
+                        <Link to="/" className="navbar-brand"><img src={mainLogo}
                                 height="50px"
                                 alt=""/></Link>
-                        
+
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -91,9 +107,7 @@ const Home = () => {
                             <h1 className="text-light">Rick and Morty</h1>
                             <p className="lead text-light">a never-ending fart joke wrapped around a studied look into nihilism</p>
                             <p>
-                                <a href="#" className="btn btn-success rounded-pill btn-lg my-2">Main
-                                                                                        call to action</a>
-
+                                <a href="#" className="btn btn-success rounded-pill btn-lg my-2">Main call to action</a>
                             </p>
                         </div>
                     </div>

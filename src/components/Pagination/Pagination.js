@@ -18,7 +18,7 @@ const Pagination = ({setPageNumber}) => {
                         <a onClick={prev}
                             className="page-link"
                             href="#"
-                            
+
                             aria-disabled="true">Previous</a>
                     </li>
                     <li className="page-item">
